@@ -18,20 +18,16 @@
 ### 1.1 Domain Context
 
 #### 1.1.1 Context
-Hiện nay, nhu cầu sử dụng tài liệu giấy của sinh viên HCMUT gia tăng vì nhiều lý do như: 
-- Tiện theo dõi và ghi chú kịp bài giảng.
-- Đọc và học đỡ đau mắt.
-- In tài liệu đi thi. 
-
-Điều này dẫn đến nhu cầu có một hệ thống in ấn thông minh (Student Smart Printing Service - SSPS).
+Hiện nay, nhu cầu sử dụng tài liệu giấy của sinh viên trường Đại học Bách khoa TP.HCM (HCMUT) càng gia tăng, với nhiều lý do có thể liệt kê như tiện theo dõi và ghi chú kịp với bài giảng trên lớp, in để đọc và học đỡ đau mắt, in tài liệu để đi thi… Nhu cầu càng nhiều, kéo theo các thách thức liên quan đến trải nghiệm dịch vụ in ấn cũng như công tác quản lý tài liệu. Một hệ thống in ấn thông minh (Student Smart Printing Service - SSPS) là cần thiết cho các thách thức và nhu cầu đó.
 
 #### 1.1.2 Stakeholders and Needs
-- **Sinh viên**: Dịch vụ in thân thiện, tiện lợi, dễ dàng thay đổi cài đặt in (in 1 hay 2 mặt, in màu, số bản in...).
-- **SPSO (Student Printing Service Officer)**: Quản lý máy in, lịch sử in ấn, và số trang in.
+- **Sinh viên**: việc in ấn thân thiện và tiện lợi, có thể theo dõi và dễ dàng thay đổi các cài đặt in ấn như in 1 hay 2 mặt, in màu, in bao nhiêu bản hay bao nhiêu trang.
+- **SPSO (Student Printing Service Officer)**: truy cập lịch sử in của sinh viên hay máy in, quản lý các máy in, quản lý số trang in cho sinh viên, theo dõi tình trạng lịch sử in ấn.
 
 #### 1.1.3 Stakeholders and Benefits
-- **Sinh viên**: Tiết kiệm thời gian, công sức, theo dõi số trang in, lưu tài liệu đã in.
-- **SPSO**: Quản lý hiệu quả, thống kê lịch sử, đảm bảo chất lượng dịch vụ.
+- **Sinh viên**: tiết kiệm thời gian và công sức, theo dõi được số trang đã in và còn lại, xem lại được tài liệu đã in.
+- **SPSO**: quản lý hiệu quả, lưu và thống kê lịch sử, theo dõi được các đơn hàng và các phản hồi để đảm bảo ổn định về chất lượng.
+
 
 ---
 
@@ -58,6 +54,13 @@ Hiện nay, nhu cầu sử dụng tài liệu giấy của sinh viên HCMUT gia 
 ---
 
 ### 1.3 Use-case Diagram
+
+###Use-case diagram toàn hệ thống
+
+![alt text](https://github.com/akngg/se_ssps_241/blob/main/materials/img/dhsnijwg.png?raw=true)
+
+###Use-case diagram chức năng in tài liệu
+
 Các use-case chính:
 - Đăng nhập/Đăng ký.
 - Mua thêm trang in.
