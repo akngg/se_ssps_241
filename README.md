@@ -1,15 +1,6 @@
-# Report
+# A Smart Printing Service for Students at HCMUT (HCMUT SSPS)
 
-## A Smart Printing Service for Students at HCMUT (HCMUT SSPS)
-
-### Danh sách thành viên
-| Họ và Tên       | MSSV    |
-|------------------|---------|
-| Nguyễn Quốc Tuấn | 2112585 |
-| Nguyễn Minh Ngọc | 2212263 |
-| Nguyễn Anh Kiệt  | 2211758 |
-
----
+----
 
 ## 1. Requirements Elicitation
 
@@ -27,7 +18,6 @@ Hiện nay, nhu cầu sử dụng tài liệu giấy của sinh viên trường 
 #### 1.1.3 Stakeholders and Benefits
 - **Sinh viên**: tiết kiệm thời gian và công sức, theo dõi được số trang đã in và còn lại, xem lại được tài liệu đã in.
 - **SPSO**: quản lý hiệu quả, lưu và thống kê lịch sử, theo dõi được các đơn hàng và các phản hồi để đảm bảo ổn định về chất lượng.
-
 
 ---
 
@@ -55,63 +45,61 @@ Hiện nay, nhu cầu sử dụng tài liệu giấy của sinh viên trường 
 
 ### 1.3 Use-case Diagram
 
-###Use-case diagram toàn hệ thống
+### Use-case diagram toàn hệ thống
 
 ![alt text](https://github.com/akngg/se_ssps_241/blob/main/materials/img/dhsnijwg.png?raw=true)
 
-###Use-case diagram chức năng in tài liệu
+### Use-case diagram chức năng in tài liệu
 
-Các use-case chính:
-- Đăng nhập/Đăng ký.
-- Mua thêm trang in.
-- In tài liệu.
-- Xem lịch sử in.
-- Quản lý máy in.
-- Chỉnh sửa cài đặt hệ thống.
-- Xem báo cáo lịch sử hoạt động.
+![alt text](https://github.com/akngg/se_ssps_241/blob/main/materials/img/xt3hvirs.png?raw=true)
 
----
+----
 
 ## 2. System Modeling
 
 ---
 
 ### 2.1 Activity Diagram
-Mô tả hoạt động in tài liệu: Sinh viên phải xác thực thành công qua HCMUT_SSO, có số dư đủ, chọn máy in sẵn sàng, sau đó in tài liệu và trừ số dư.
+![alt text](https://github.com/akngg/se_ssps_241/blob/main/materials/img/qntm2yma.png?raw=true)
+Chức năng in tài liệu yêu cầu sinh viên phải đủ các điều kiện bao gồm : vượt qua hệ thống xác thực tập trung HCMUT-SSO, số dư đủ để in số trang tài liệu yêu cầu, máy in được sinh viên chọn phải sẵn sàng để thực hiện in. Sau khi xác minh đủ các điều kiện để in tài liệu, quá trình in tài liệu sẽ được thực hiện, hệ thống sẽ trừ số trang in vào số dư tài khoản của sinh viên, sau đó sinh viên có thể nhận tài liệu tại máy in đã được chọn in.
 
 ### 2.2 Sequence Diagram
-Các bước tuần tự để in tài liệu:
-1. Sinh viên xác thực.
-2. Hệ thống kiểm tra số dư.
-3. Tiến hành in.
-4. Ghi lịch sử in.
+
+![alt text](https://github.com/akngg/se_ssps_241/blob/main/materials/img/mjwj1kbu.png?raw=true)
+
+Chức năng in tài liệu yêu cầu sinh viên được thực hiện theo tuần tự: vượt qua hệ thống xác thực tập trung HCMUT-SSO, số dư đủ để in số trang tài liệu yêu cầu. Sau khi xác minh đủ các điều kiện để in tài liệu, quá trình in tài liệu sẽ được thực hiện, hệ thống sẽ trừ số trang in vào số dư tài khoản của sinh viên, sau đó sinh viên có thể nhận tài liệu tại máy in đã được chọn in.
 
 ### 2.3 Class Diagram
-Các class bao gồm:
-- Sinh viên, máy in, quản lý lịch sử in, kiểm tra đăng nhập, thanh toán.
+Class diagram cho module in tài liệu, bao gồm các stakeholder và các class cho kiểm tra đăng nhập, in, kiểm tra thanh toán, lưu lịch sử in và quản lý máy in.
 
 ---
 
 ## 3. Architecture Design
 
 ### 3.1 Layered Architecture Design
-- **User Interface Layer**: Giao diện cho sinh viên và quản lý, hỗ trợ responsive trên PC và di động.
-- **Web Services Layer**: REST API kết nối các lớp chức năng.
-- **Data Storage**: Dùng MySQL, hỗ trợ sao lưu và quản lý dữ liệu.
-- **External Services/APIs**: Tích hợp với HCMUT_SSO và BK-Pay.
+
+![alt text](https://github.com/akngg/se_ssps_241/blob/main/materials/img/szyzdby5.png?raw=true)
+
+- **User Interface Layer**:
+Giao diện người dùng của hệ thống HCMUT-SSPS sẽ được xây dựng dưới dạng ứng dụng web có hai phân khu chính: dành cho sinh viên và dành cho cán bộ quản lý. Sinh viên được phép truy cập các chức năng như: in ấn, xem lịch sử in và thực hiện thanh toán. Giao diện cán bộ quản lý sẽ bao gồm các chức năng như: quản lý máy in, cấu hình hệ thống, và xem báo cáo thống kê. Mỗi chức năng sẽ được thiết kế thành một trang riêng biệt để dễ dàng truy cập. Giao diện sẽ áp dụng kỹ thuật responsive, nghĩa là tự điều chỉnh để hiển thị tốt trên cả màn hình máy tính, máy tính bảng và điện thoại. User Interface layer sẽ được liên kết trực tiếp tới Web Services layer.
+
+- **Web Services Layer**:
+Web Service sẽ được tổ chức thiết kế theo REST API, sử dụng các chức năng lõi ở lớp bên dưới nó để phục vụ cho yêu cầu API từ lớp User Interface phía trên. Lớp Web Services sẽ không được phép tương tác trực tiếp với Database hay các dịch vụ API bên ngoài như BK-Pay và HCMUT-SSO, nó chỉ được sử dụng các chức năng lõi ở lớp System Core Utilities ngay bên dưới nó để tương tác gián tiếp tới các thành phần ở lớp dưới. Điều này giúp nâng cao tính bảo mật và tính tách biệt ở mỗi lớp, cho phép ta có thể nâng cấp thay đổi hoàn toàn một lớp miễn là nó tương thích với hai lớp tiếp xúc trực tiếp với nó.
+
+- **Data Storage**:
+Hệ thống HCMUT-SSPS sẽ sử dụng cơ sở dữ liệu quan hệ MySQL để lưu trữ các dữ liệu bao gồm thông tin sinh viên, cán bộ quản lý, dữ liệu máy in, lịch sử in ấn, các giao dịch thanh toán, … và các dữ liệu khác. 
+Khối Database Management ở lớp dưới cùng sẽ đảm nhận vai trò tương tác trực tiếp với cơ sở dữ liệu. Mọi hành động muốn tương tác với cơ sở dữ liệu từ lớp phía trên đều cần phải thông qua sự quản lý của khối này.
+Hệ thống sẽ áp dụng các biện pháp chuẩn hóa dữ liệu để giảm thiểu trùng lặp, đồng thời có các kế hoạch sao lưu định kỳ để có thể phục hồi dữ liệu và đảm bảo toàn vẹn dữ liệu trong trường hợp có sự cố xảy ra.
+
+- **External Services/APIs**:
+Hệ thống sẽ tích hợp với các dịch vụ bên ngoài như HCMUT-SSO và BK-Pay thông qua các API để thực hiện xác thực và thanh toán. Mỗi API này sẽ được quản lý và kiểm soát thông qua một khối trong lớp dưới cùng. Các tiếp cận này giúp đảm bảo rằng các dịch vụ bên ngoài được tích hợp an toàn, dễ dàng quản lý và giảm thiểu rủi ro bảo mật.
+
 
 ### 3.2 Student Printing Document Architecture
-Sơ đồ Component mô tả:
-- Sinh viên gửi yêu cầu in.
-- Hệ thống xác thực, kiểm tra số dư qua Balance Manager.
-- Thực hiện in và ghi vào lịch sử in.
+
+![alt text](https://github.com/akngg/se_ssps_241/blob/main/materials/img/ixibur2i.png?raw=true)
+
+Sinh viên đăng nhập được SSO xác nhận và gửi yêu cầu in đến SSMS. Hệ thống xác thực thông tin và kiểm tra số dư tài khoản qua Balance Manager. Nếu có đủ số dư, yêu cầu in sẽ được thông qua và gửi tới Printer để in. Cuối cùng, lịch sử in được ghi lại trong Printing History Manager.
 
 ---
-
-## 4. Implementation
-
-### Sprint 1
-- Chi tiết triển khai sprint đầu tiên.
-
-### Sprint 2
-- Chi tiết triển khai sprint thứ hai.
+end
