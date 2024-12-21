@@ -16,7 +16,7 @@ function App() {
     balance: balance,
 
     login: (username, password) => {
-      if (true || username == "kiet.nguyen9052" && password == "123") {
+      if (username == "kiet.nguyen9052" && password == "123") {
         username = username;
         setUsername(username);
         return true;
