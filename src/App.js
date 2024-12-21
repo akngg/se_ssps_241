@@ -8,11 +8,12 @@ import Dashboard from "./Pages/Dashboard.js";
 
 
 function App() {
-  const [username, setUsername] = useState();
+  const [username, setUsername] = useState(null);
+  const [balance, setBalance] = useState(0);
 
   const props = {
     username: username,
-    balance: 0,
+    balance: balance,
 
     login: (username, password) => {
       if (true || username == "kiet.nguyen9052" && password == "123") {
@@ -26,7 +27,10 @@ function App() {
     },
     logout: () => {
       setUsername(null);
-    }
+    },
+    addBalance: (pages) => {
+      setBalance(parseInt(balance) + parseInt(pages));
+    },
   }
 
   return (

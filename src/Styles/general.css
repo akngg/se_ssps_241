@@ -65,3 +65,28 @@ header {
     background: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
+
+.info-card {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.status {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e6f7e6;
+    color: #28a745;
+    font-size: 14px;
+    border: 1px solid #d4edda;
+    border-radius: 4px;
+}
+
+.content {
+    padding: 20px;
+}
