@@ -1,0 +1,67 @@
+button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prime-button {
+    background-color: #4d6ef7;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+span {
+    vertical-align: middle;
+}
+
+input {
+    padding: 5px;
+    text-align: center;
+    width: 50px;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    background-color: #f3f3f3;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    color: #333;
+}
+
+.card:hover {
+    background-color: #e0e0e0;
+}
+
+
+.group {
+    background-color: #f3f3f3;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
